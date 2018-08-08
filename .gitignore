@@ -1,3 +1,6 @@
+# CSS -- only check in .less files
+*.css
+
 # Logs
 logs
 *.log

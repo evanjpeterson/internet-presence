@@ -1,0 +1,13 @@
+{
+  "name": "internet-presence",
+  "description": "Evant's website",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/evanjpeterson/internet-presence.git"
+  },
+  "dependencies": {
+    "less": "^3.8.1",
+    "normalize.css": "^8.0.0"
+  }
+}
