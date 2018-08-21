@@ -1,13 +1,23 @@
 {
   "name": "internet-presence",
-  "description": "Evant's website",
+  "version": "0.0.0",
+  "description": "Evan's website",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git://github.com/evanjpeterson/internet-presence.git"
   },
+  "scripts": {
+    "start": "node ./site/bin/www"
+  },
   "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "debug": "^2.6.9",
+    "express": "^4.16.3",
     "less": "^3.8.1",
-    "normalize.css": "^8.0.0"
+    "less-middleware": "~2.2.1",
+    "morgan": "^1.9.0",
+    "normalize.css": "^8.0.0",
+    "npm": "^6.4.0"
   }
 }
