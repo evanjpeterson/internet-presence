@@ -1,5 +1,4 @@
 #!/bin/sh
 
 npm install
-
-./node_modules/less/bin/lessc ./src/site.less ./src/site.css
+cp node_modules/normalize.css/normalize.css site/public/css

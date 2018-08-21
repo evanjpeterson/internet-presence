@@ -1,15 +1,16 @@
 TODO
 ---------------------------
-Webpack
-Babel/TS/etc.
-Vue
+* Bio
+* JS stuff
+  * Webpack
+  * Babel/TS/etc.
+  * Vue
 
 
 
 IN PROGRESS
 ---------------------------
-Setup script
-Express
+* Setup script
 
 
 
@@ -21,7 +22,8 @@ MAYBE LATER..
 
 DONE
 ---------------------------
-Fancy gradient on the main page
-LESS
+* Fancy gradient
+* LESS
+* Express
 
 

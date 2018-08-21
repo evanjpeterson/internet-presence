@@ -8,7 +8,8 @@
     "url": "git://github.com/evanjpeterson/internet-presence.git"
   },
   "scripts": {
-    "start": "node ./site/bin/www"
+    "start-server": "node ./site/bin/www",
+    "debug-server": "DEBUG=site:* npm run start-server"
   },
   "dependencies": {
     "cookie-parser": "^1.4.3",
