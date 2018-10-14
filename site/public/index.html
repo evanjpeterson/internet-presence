@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hello!</title>
-  <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"> 
+  <title>evan's homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
   <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <section class="main-section">
-    <p class="splash">And Greg said, "Let there be gradients."</p>
+  <section class="about-me">
+    <h1>evan peterson</h1>
+    <h2>software developer</h2>
+    <p class="contact"></p>
+    <ul class="links">
+      <li><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/evanjpeterson">github</a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://codepen.io/evanjpeterson">codepen</a></li>
+      <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/evanjpeterson">linkedin</a></li>
+    </ul>
   </section>
+  <script>
+    (function() {
+      var name = 'evan';
+      var domain = 'evanjp.com';
+      var contact = document.getElementsByClassName('contact')[0];
+      contact.innerHTML = name + '@' + domain;
+    })();
+  </script>
 </body>
 </html>
