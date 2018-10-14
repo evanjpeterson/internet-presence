@@ -1,5 +1,8 @@
 @midnight: #22222F;
+@twilight: #22224F;
 @nearwhite: #FEE;
+@torch: #ffe311;
+
 @base: 8px;
 @base2: @base * 2;
 @base3: @base * 3;
@@ -16,41 +19,118 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  background: @midnight;
+  background: linear-gradient(to bottom, @midnight, @twilight);
   color: @nearwhite;
 }
 
-h1 {
-  font-size: 120px;
-  margin: 0 0 @base4 0;
-}
-
-h2 {
-  font-size: 72px;
-  margin: 0 0 @base3 @base;
-}
-
-.contact {
-  font-size: 60px;
-  margin: 0 0 @base5 @base;
-}
-
-.links {
-  list-style-type: none;
+.scene {
   display: flex;
-  margin: 0 0 0 @base;
-  padding: 0;
+  flex-direction: column;
+  justify-content: flex-end;
 
-  a {
-    font-size: 32px;
-    color: @nearwhite;
-    margin-right: @base2;
+  .fire {
+    @fireSize: 150px;
+
+    margin: 0 auto @base2 auto;
+    width: @fireSize;
+    height: @fireSize;
+    position: relative;
+
+    .fire-positioner {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+
+    .mixin-fire(@diamScalar, @color, @animFunc) {
+      @diam: @fireSize * @diamScalar;
+      width: @diam;
+      height: @diam * 1.1;
+      border-radius: 45%;
+      transform-origin: bottom;
+      background: @color;
+      box-shadow: 0 -3px 20px 3px @color;
+      animation: light-flicker 2s @animFunc infinite alternate;
+    }
+
+    &-1 {
+      .mixin-fire(.3, @torch, ease-in);
+    }
+
+    &-2 {
+      .mixin-fire(.5, #ffae00, ease-out);
+    }
+
+    &-3 {
+      .mixin-fire(.7, #c60741, ease-in-out);
+    }
+
+    &-light {
+      @size: @fireSize * 1.4;
+      @firelight: fadeout(@nearwhite, 90%);
+
+      animation: light-flicker .4s ease-in-out infinite alternate;
+      transform-origin: bottom;
+      height: @size;
+      width: @size * 1.8;
+      border-top-left-radius: @size * 2;
+      border-top-right-radius: @size * 2;
+      box-shadow: 0 -50px 70px 80px @firelight;
+
+      background: @firelight;
+    }
+
+    @keyframes light-flicker {
+      0%, 100% {
+        transform: scale(1.00);
+      }
+      25% {
+        transform: scale(0.98);
+      }
+      75% {
+        transform: scale(1.02);
+      }
+    }
   }
 }
 
-.about-me{
+.about-me {
+  margin-left: @base6;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: @base6 0 0 @base6;
+
+  h1 {
+    font-size: 120px;
+    margin: 0 0 @base4 0;
+  }
+
+  h2 {
+    font-size: 72px;
+    margin: 0 0 @base3 @base;
+  }
+
+  .contact {
+    font-size: 60px;
+    margin: 0 0 @base5 @base;
+  }
+
+  .links {
+    list-style-type: none;
+    display: flex;
+    margin: 0 0 0 @base;
+    padding: 0;
+
+    a {
+      font-size: 32px;
+      color: @nearwhite;
+      margin-right: @base2;
+      transition: color 400ms ease;
+    }
+
+    a:hover {
+      color: @torch;
+    }
+  }
 }

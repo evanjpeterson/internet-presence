@@ -9,8 +9,21 @@
 </head>
 <body>
   <div id="fullpage">
-    <section class="splash section">
-      <p>UNDER CONSTRUCTION</p>
+    <section class="scene section">
+      <div class="fire">
+        <div class="fire-positioner">
+          <div class="fire-light"></div>
+        </div>
+        <div class="fire-positioner">
+          <div class="fire-3"></div>
+        </div>
+        <div class="fire-positioner">
+          <div class="fire-2"></div>
+        </div>
+        <div class="fire-positioner">
+          <div class="fire-1"></div>
+        </div>
+      </div>
     </section>
     <section class="about-me section">
       <h1>evan peterson</h1>
@@ -38,7 +51,8 @@
         // UGH the license stuff is confusing, but I'm *pretty* sure it's okay to use fullPage.js,
         // licensed under GPLv3, with this project, licensed under MIT.
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        autoScrolling:true
+        autoScrolling: true,
+        verticalCentered: false,
       });
 
     })();
