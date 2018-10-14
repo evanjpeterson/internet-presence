@@ -1,5 +1,9 @@
 # CSS -- only check in .less files
-*.css
+*.css*
+
+
+# JS Dependencies
+fullpage.min.js*
 
 # Logs
 logs
