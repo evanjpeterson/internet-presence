@@ -46,6 +46,8 @@
       var contact = document.getElementsByClassName('contact')[0];
       contact.innerHTML = name + '@' + domain;
 
+      var firelight = document.getElementsByClassName('fire-light')[0];
+
       // set up fullpage scroller
       new fullpage('#fullpage', {
         // UGH the license stuff is confusing, but I'm *pretty* sure it's okay to use fullPage.js,
@@ -53,6 +55,15 @@
         licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
         autoScrolling: true,
         verticalCentered: false,
+        onLeave: function(origin, destination, direction) {
+          if (destination.index === 1) {
+            // hush the flame
+            firelight.classList.add('hushed');
+          } else {
+            // bring the fire back
+            firelight.classList.remove('hushed');
+          }
+        }
       });
 
     })();
