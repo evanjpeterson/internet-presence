@@ -1,9 +1,11 @@
 # CSS -- only check in .less files
 *.css*
 
-
 # JS Dependencies
 fullpage.min.js*
+
+# Mac
+.DS_Store
 
 # Logs
 logs

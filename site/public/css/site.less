@@ -1,5 +1,6 @@
 @midnight: #22222F;
 @twilight: #22224F;
+@indigo: #22226F;
 @nearwhite: #FEE;
 @torch: #ffe311;
 
@@ -19,7 +20,7 @@
 body {
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  background: linear-gradient(to bottom, @midnight, @twilight);
+  background: @midnight;
   color: @nearwhite;
 }
 
@@ -27,9 +28,11 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
+  background: @indigo;
 
   .fire {
-    @fireSize: 150px;
+    @fireSize: 120px;
 
     margin: 0 auto @base2 auto;
     width: @fireSize;
@@ -68,7 +71,7 @@ body {
 
     &-light {
       @size: @fireSize * .2;
-      @firelight: fadeout(@nearwhite, 88%);
+      @firelight: fadeout(@nearwhite, 92%);
 
       animation: light-flicker .4s ease-in-out infinite alternate;
       transform-origin: bottom;
@@ -76,7 +79,7 @@ body {
       width: @size * 1.4;
       border-top-left-radius: @size * 2;
       border-top-right-radius: @size * 2;
-      box-shadow: 0 -70px 140px 160px @firelight;
+      box-shadow: 0 -50px 120px 80px @firelight;
       transition: box-shadow 300ms linear;
     }
 
@@ -95,6 +98,41 @@ body {
       75% {
         transform: scale(1.02);
       }
+    }
+  }
+
+  .treeline {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    &-layer {
+      background-position: bottom center;
+      background-repeat: repeat-x;
+      background-size: 700px;
+      height: 100%;
+    }
+    &-back {
+      position: absolute;
+      background-image: url('../images/tree_outline_back.png');
+      filter: blur(2px);
+      bottom: 0;
+      width: 100%;
+    }
+    &-left, &-right {
+      position: absolute;
+      filter: blur(1px);
+      bottom: 0;
+      width: 50%;
+    }
+    &-left {
+      background-image: url('../images/tree_outline_left.png');
+      left: 0;
+    }
+    &-right {
+      background-image: url('../images/tree_outline_right.png');
+      right: 0;
     }
   }
 }
