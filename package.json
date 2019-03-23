@@ -15,7 +15,6 @@
     "cookie-parser": "^1.4.3",
     "debug": "^2.6.9",
     "express": "^4.16.3",
-    "fullpage.js": "^3.0.3",
     "less": "^3.8.1",
     "less-middleware": "^3.0.1",
     "morgan": "^1.9.0",

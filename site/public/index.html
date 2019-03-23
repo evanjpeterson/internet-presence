@@ -4,11 +4,9 @@
   <title>evan's homepage</title>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
   <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/fullpage.min.css" />
   <link rel="stylesheet" href="css/site.css" />
 </head>
 <body>
-  <div id="fullpage">
     <section class="scene section">
       <div class="moon"></div>
       <div class="treeline">
@@ -41,9 +39,7 @@
         <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/evanjpeterson">linkedin</a></li>
       </ul>
     </section>
-  </div>
 
-  <script src="js/fullpage.min.js"></script>
   <script>
     (function() {
       // be sneaky with the internet mail
@@ -53,24 +49,6 @@
       contact.innerHTML = name + '@' + domain;
 
       var firelight = document.getElementsByClassName('fire-light')[0];
-
-      // set up fullpage scroller
-      new fullpage('#fullpage', {
-        // UGH the license stuff is confusing, but I'm *pretty* sure it's okay to use fullPage.js,
-        // licensed under GPLv3, with this project, licensed under MIT.
-        licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-        autoScrolling: true,
-        verticalCentered: false,
-        onLeave: function(origin, destination, direction) {
-          if (destination.index === 1) {
-            // hush the flame
-            firelight.classList.add('hushed');
-          } else {
-            // bring the fire back
-            firelight.classList.remove('hushed');
-          }
-        }
-      });
 
     })();
   </script>
