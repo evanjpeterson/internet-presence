@@ -24,15 +24,21 @@ body {
   color: @nearwhite;
 }
 
+.section {
+  height: 100vh;
+}
+
 .scene {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   position: relative;
-  background: @indigo;
+  @sceneHeight: 80px;
+  @matchstickHeight: 240px;
 
   .fire {
-    @fireSize: 120px;
+    @fireSize: 160px;
+    @fireHeight: @sceneHeight + @matchstickHeight - (@fireSize / 4);
 
     margin: 0 auto @base2 auto;
     width: @fireSize;
@@ -41,7 +47,7 @@ body {
 
     .fire-positioner {
       position: absolute;
-      bottom: 0;
+      bottom: @fireHeight;
       left: 50%;
       transform: translate(-50%, 0);
     }
@@ -49,7 +55,7 @@ body {
     .mixin-fire(@diamScalar, @color, @animFunc) {
       @diam: @fireSize * @diamScalar;
       width: @diam;
-      height: @diam * 1.1;
+      height: @diam * 1.2;
       border-radius: 45%;
       transform-origin: bottom;
       background: @color;
@@ -71,11 +77,11 @@ body {
 
     &-light {
       @size: @fireSize * .2;
-      @firelight: fadeout(@nearwhite, 92%);
+      @firelight: fadeout(@nearwhite, 75%);
 
       animation: light-flicker .4s ease-in-out infinite alternate;
       transform-origin: bottom;
-      height: @size;
+      height: @size * 1.4;
       width: @size * 1.4;
       border-top-left-radius: @size * 2;
       border-top-right-radius: @size * 2;
@@ -101,50 +107,14 @@ body {
     }
   }
 
-  .treeline {
+  .matchstick {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-
-    &-layer {
-      background-position: bottom center;
-      background-repeat: repeat-x;
-      background-size: 700px;
-      height: 100%;
-    }
-    &-back {
-      position: absolute;
-      background-image: url('../images/tree_outline_back.png');
-      filter: blur(2px);
-      bottom: 0;
-      width: 100%;
-    }
-    &-left, &-right {
-      position: absolute;
-      filter: blur(1px);
-      bottom: 0;
-      width: 50%;
-    }
-    &-left {
-      background-image: url('../images/tree_outline_left.png');
-      left: 0;
-    }
-    &-right {
-      background-image: url('../images/tree_outline_right.png');
-      right: 0;
-    }
-  }
-
-  .moon {
-    @size: 400px;
-
-    background: @nearwhite;
-    border-radius: 50%;
-    width: @size;
-    height: @size;
-    margin-left: @base6;
-    box-shadow: 0 0 50px 10px fadeout(@nearwhite, 40%);
+    bottom: @sceneHeight;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: linear-gradient(to bottom, brown, @midnight);
+    height: @matchstickHeight;
+    width: 16px;
   }
 }
 
