@@ -1,7 +1,7 @@
 # internet-presence
 
 
-this is my website it'll get there don't worry
+this is my website
 
 
 Dependencies
