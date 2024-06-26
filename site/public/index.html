@@ -3,11 +3,25 @@
 <head>
   <title>evan's homepage</title>
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet"> 
-  <link rel="stylesheet" href="css/normalize.css" />
   <link rel="stylesheet" href="css/site.css" />
+  <meta name="theme-color" content="#22222F">
 </head>
 <body>
-    <section class="scene section">
+  <div class="container">
+    <section class="about-me">
+      <h1>evan peterson</h1>
+      <h2>software developer</h2>
+      <p class="contact"></p>
+      <ul class="links">
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/evanjpeterson">github</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/evanjpeterson">linkedin</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://www.x.com/evanjpx">️x</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="https://codepen.io/evanjpeterson">codepen</a></li>
+        <li><a target="_blank" rel="noopener noreferrer" href="files/resume.pdf">resume</a></li>
+      </ul>
+    </section>
+    <div class="spacer"></div>
+    <div class="scene">
       <div class="matchstick"></div>
       <div class="fire">
         <div class="fire-positioner">
@@ -23,29 +37,18 @@
           <div class="fire-1"></div>
         </div>
       </div>
-    </section>
-    <section class="about-me section">
-      <h1>evan peterson</h1>
-      <h2>software developer</h2>
-      <p class="contact"></p>
-      <ul class="links">
-        <li><a target="_blank" rel="noopener noreferrer" href="https://www.github.com/evanjpeterson">github</a></li>
-        <li><a target="_blank" rel="noopener noreferrer" href="https://codepen.io/evanjpeterson">codepen</a></li>
-        <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/evanjpeterson">linkedin</a></li>
-        <li><a target="_blank" rel="noopener noreferrer" href="files/resume.pdf">résumé</a></li>
-      </ul>
-    </section>
+    </div>
+  </div>
 
   <script>
     (function() {
       // be sneaky with the internet mail
-      var name = 'evan';
+      var name = 'hello';
       var domain = 'evanjp.com';
       var contact = document.getElementsByClassName('contact')[0];
       contact.innerHTML = name + '@' + domain;
 
-      var firelight = document.getElementsByClassName('fire-light')[0];
-
+      console.log("Why, hello there! :^)")
     })();
   </script>
 </body>

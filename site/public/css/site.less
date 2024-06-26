@@ -3,13 +3,16 @@
 @indigo: #22226F;
 @nearwhite: #FEE;
 @torch: #ffe311;
+@glow: #ffae00;
 
-@base: 8px;
+@base: .5rem;
 @base2: @base * 2;
 @base3: @base * 3;
 @base4: @base * 4;
 @base5: @base * 5;
 @base6: @base * 6;
+@base7: @base * 7;
+@base8: @base * 8;
 
 *,
 *:after,
@@ -18,37 +21,47 @@
 }
 
 body {
+  margin: 0;
   font-family: 'Source Sans Pro', sans-serif;
   font-weight: bold;
-  background: @midnight;
+  font-size: 16px;
+  background: radial-gradient(circle at right bottom, @twilight, @midnight);
+  background-color: @midnight;
   color: @nearwhite;
 }
 
-.section {
-  height: 100vh;
+.container {
+  height: 100dvh;
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
 }
 
 .scene {
+  @matchstickHeight: 14em;
+  @sceneBotMargin: @matchstickHeight * .4;
+
+  height: @matchstickHeight;
+  width: @matchstickHeight;
+  position: absolute;
+  bottom: 0;
+  right: 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  position: relative;
-  @sceneHeight: 80px;
-  @matchstickHeight: 240px;
 
   .fire {
-    @fireSize: 160px;
-    @fireHeight: @sceneHeight + @matchstickHeight - (@fireSize / 4);
+    @fireSize: @matchstickHeight * .8;
+    @fireHeight: @sceneBotMargin + @matchstickHeight - (@fireSize / 4);
 
     margin: 0 auto @base2 auto;
     width: @fireSize;
     height: @fireSize;
-    position: relative;
+    position: absolute;
 
     .fire-positioner {
       position: absolute;
       bottom: @fireHeight;
-      left: 50%;
       transform: translate(-50%, 0);
     }
 
@@ -68,7 +81,7 @@ body {
     }
 
     &-2 {
-      .mixin-fire(.5, #ffae00, ease-out);
+      .mixin-fire(.5, @glow, ease-out);
     }
 
     &-3 {
@@ -111,12 +124,11 @@ body {
 
   .matchstick {
     position: absolute;
-    bottom: @sceneHeight;
-    left: 50%;
+    bottom: @sceneBotMargin;
     transform: translate(-50%, 0);
-    background: linear-gradient(to bottom, brown, @midnight);
+    background: linear-gradient(to bottom, brown, @twilight);
     height: @matchstickHeight;
-    width: 16px;
+    width: @matchstickHeight * .085;
   }
 }
 
@@ -125,19 +137,20 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  flex: 1;
 
   h1 {
-    font-size: 120px;
+    font-size: 8em;
     margin: 0 0 @base4 0;
   }
 
   h2 {
-    font-size: 72px;
+    font-size: 5em;
     margin: 0 0 @base3 @base;
   }
 
   .contact {
-    font-size: 60px;
+    font-size: 4em;
     margin: 0 0 @base5 @base;
   }
 
@@ -148,14 +161,68 @@ body {
     padding: 0;
 
     a {
-      font-size: 32px;
+      font-size: 2em;
       color: @nearwhite;
       margin-right: @base2;
       transition: color 400ms ease;
     }
 
     a:hover {
-      color: @torch;
+      color: @glow;
+    }
+  }
+}
+
+.spacer {
+  height: 15dvh;
+}
+
+@media screen and (max-device-width: 461px) {
+  .about-me {
+    h1, h2, a, .contact {
+      font-weight: initial;
+    }
+
+    .links {
+      a {
+        font-size: 3.5em;
+      }
+    }
+  }
+
+}
+
+@media screen and (max-device-width: 461px) {
+  body {
+    background: @midnight;
+  }
+
+  @media (orientation: portrait) {
+    .about-me .links {
+      margin-top: @base8 * 2;
+      flex-direction: column;
+
+      li {
+        margin-top: @base4;
+      }
+    }
+
+    .spacer {
+      height: 0;
+    }
+  }
+
+  @media (orientation: landscape) {
+    body {
+      font-size: 8px;
+    }
+    .scene {
+      right: 10dvw;
+    }
+    .about-me {
+      h1, h2 {
+        margin-bottom: 0;
+      }
     }
   }
 }
