@@ -10,9 +10,9 @@ Dependencies
 These are things that this repo requires to run that aren't
 (currently) installed automatically.
 
-* node @ 8.11.3
-* npm @ latest
-* pm2 @ 3.0.3
+* node
+* npm
+* pm2
 
 
 Notes
